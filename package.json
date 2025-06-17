@@ -1,0 +1,24 @@
+{
+  "name": "mathpackjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Saul-Lara/MathPackJS.git"
+  },
+  "keywords": [],
+  "author": "Saul Lara",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "description": "Package with statistics and discrete math functions, and a graphics generator with Node.js",
+  "dependencies": {
+    "canvas": "^3.1.0",
+    "chart.js": "^4.5.0",
+    "chartjs-node-canvas": "^5.0.0"
+  }
+}
