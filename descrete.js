@@ -6,4 +6,8 @@ function factorial(number){
     return factorial;
 }
 
-module.exports = { factorial };
+function linearPermutation(items, positions){
+    return Math.floor(factorial(items)/factorial(items - positions));
+}
+
+module.exports = { factorial, linearPermutation };
