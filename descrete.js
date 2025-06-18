@@ -10,4 +10,8 @@ function linearPermutation(items, positions){
     return Math.floor(factorial(items)/factorial(items - positions));
 }
 
-module.exports = { factorial, linearPermutation };
+function circularPermutation(items){
+ return factorial(items - 1)
+}
+
+module.exports = { factorial, linearPermutation, circularPermutation };
