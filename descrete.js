@@ -18,4 +18,8 @@ function combinations(set, subset){
  return Math.floor(factorial(set) / (factorial(set - subset) * factorial(subset)))
 }
 
-module.exports = { factorial, linearPermutation, circularPermutation, combinations };
+function distributions(containers, items){
+    return combinations((containers + items - 1), items)
+}
+
+module.exports = { factorial, linearPermutation, circularPermutation, combinations, distributions };
