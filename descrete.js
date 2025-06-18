@@ -11,7 +11,11 @@ function linearPermutation(items, positions){
 }
 
 function circularPermutation(items){
- return factorial(items - 1)
+ return factorial(items - 1);
 }
 
-module.exports = { factorial, linearPermutation, circularPermutation };
+function combinations(set, subset){
+ return Math.floor(factorial(set) / (factorial(set - subset) * factorial(subset)))
+}
+
+module.exports = { factorial, linearPermutation, circularPermutation, combinations };
