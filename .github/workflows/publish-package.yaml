@@ -1,0 +1,35 @@
+name: Publish package in GitHub Packages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish-package:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      # setup-node creates a .npmrc file in the runner to publish in Github Packages
+      # It uses as a reference NODE_AUTH_TOKEN (GITHUB_TOKEN)
+      - name: .npmrc file configuration
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@Saul-Lara" # Username
+
+      - name: Install dependencies using package-lock versions
+        run: npm ci
+
+      - name: Publish package in GitHub Packages
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
